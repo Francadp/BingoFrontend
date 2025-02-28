@@ -1,0 +1,116 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea el contenido desde la parte superior */
+  align-items: center;
+  text-align: center;
+  height: 70vh; /* Mantiene la altura completa de la pantalla */
+  background: rgb(45, 4, 78);
+  border-radius: 10px;
+  animation: fadeIn 2s ease-out;
+  position: relative;
+  padding: 1rem; /* Reduce el padding para evitar que el contenido se desborde */
+  box-sizing: border-box; /* Asegura que el padding se incluya dentro del tamaño total */
+}
+
+/* Contenedor para el título y los botones */
+.header {
+  display: flex;
+  align-items: center;  /* Alinea verticalmente el título y los botones */
+  justify-content: center; /* Alinea los elementos al centro */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  margin-bottom: 1rem; /* Espacio debajo del título y botones */
+}
+
+/* Botones Play y Pausa */
+.play-button,
+.pause-button {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 50%;
+  width: 130px; /* Ajusta el tamaño del botón */
+  height: 130px; /* Ajusta el tamaño del botón */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 1s ease;
+  margin-right: 20px; /* Añadir margen para separación entre los botones y el título */
+}
+
+/* Estilos para el botón de pausa */
+.pause-button {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+/* Estilo para los encabezados */
+h1 {
+  margin: 0;
+  color: #ecdcb0;
+  font-size: 5em;
+  text-transform: uppercase;
+  text-align: center; /* Centra el título */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Iconos dentro de los botones */
+.play-button .material-icons,
+.pause-button .material-icons {
+  font-size: 80px; /* Ajusta el tamaño del icono */
+  color: #fff;
+}
+
+/* Efecto al pasar el ratón por encima de los botones */
+.play-button:hover,
+.pause-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para el contador */
+.countdown {
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  height: 40%; /* Ajusta la altura según lo que necesites */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Espacio entre el título y la cuenta regresiva */
+}
+
+.countdown img {
+  width: 35%; /* Aumenta el tamaño de las imágenes */
+  max-width: 600px; /* Limita el tamaño máximo de la imagen */
+  height: auto; /* Mantiene la proporción de la imagen */
+  margin-bottom: 10px; /* Controla el margen inferior */
+}
+
+/* Estilo para la visualización del número */
+.number-display h1 {
+  font-size: 30rem;
+  color: #ffffff;
+  animation: bounce 1s infinite alternate;
+  margin-top: 0;
+  margin-bottom: 10px; /* Elimina el margen superior */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}

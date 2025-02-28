@@ -1,0 +1,115 @@
+/* Contenedor principal */
+.numbers-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+  align-items: center; /* Centra todos los elementos horizontalmente */
+  margin: 15px;
+  padding: 15px;
+  height: 96vh;
+  background: #ffffff;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+  overflow: hidden; /* Evita que los números sobrepasen el contenedor */
+}
+
+/* Estilo para el título */
+.numbers-list h2 {
+  margin: 20px; /* Espacio superior */
+  color: #333;
+  font-size: 2.5rem;
+  text-align: center; /* Asegura que el título esté centrado */
+  animation: fadeIn 1s ease-in-out; /* Animación de aparición */
+}
+
+/* Lista de números */
+.number-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra los números horizontalmente */
+  gap: 10px;
+  padding: 0;
+  animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+  overflow-y: auto; /* Permite desplazarse verticalmente si los elementos no caben */
+  max-height: 90%; /* Limita la altura de la lista para evitar que sobrepase */
+  padding-right: 15px; /* Espacio para el scrollbar */
+}
+
+/* Cada número */
+.number-item {
+  background-color: #17a2b8;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 3rem; /* Tamaño base del texto */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: bounce 0.5s ease-in-out infinite alternate; /* Animación de rebote */
+  transform-origin: center; /* El rebote será desde el centro */
+  transition: font-size 0.3s ease-in-out; /* Transición suave para cambios en el tamaño */
+  max-width: 100px; /* Limita el ancho máximo de cada número */
+  white-space: nowrap; /* Asegura que el texto no se envuelva */
+}
+
+/* Reducir el tamaño del texto cuando la lista crece */
+.numbers-list.active .number-item {
+  font-size: calc(2rem - (100% - 100vm) / 100); /* Reducir el tamaño de fuente proporcionalmente */
+  /* La fórmula depende del tamaño del contenedor y el número de elementos */
+}
+
+/* Botón para reiniciar */
+.reset-button {
+  margin-top: auto; /* Empuja el botón hacia abajo */
+  padding: 10px 20px;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 30px;
+  text-align: center; /* Centra el texto en el botón */
+  animation: fadeIn 1s ease-in-out; /* Animación de entrada con más demora */
+}
+
+.reset-button:hover {
+  background-color: #ff1a1a;
+  animation: pulse 0.5s ease-in-out infinite; /* Efecto de pulso al hacer hover */
+}
+
+/* Animación de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animación de pulso (para el botón) */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,47 @@
+/* Estilo para el contenedor principal */
+.html {
+  background-color: rgb(45, 4, 78); /* Color de fondo violeta */
+  width: 100%; /* Ocupa toda la anchura disponible */
+  display: flex; /* Flexbox para alinear los componentes */
+  flex-direction: column; /* Organiza los componentes en columnas */
+  justify-content: flex-start; /* Alineación al principio */
+  align-items: stretch; /* Alineación de los componentes */
+  box-sizing: border-box;
+}
+
+/* Estilo para el contenedor de la fila */
+.row {
+  display: flex; /* Usa Flexbox para alinear en fila */
+  justify-content: space-between; /* Espacio entre los elementos */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: 76vh;
+}
+
+/* Estilo para el componente game */
+.game {
+  width: 70%;
+}
+
+/* Estilo para el componente numbers-list */
+.numbers-list {
+  width: 30%;
+  height:100%;
+}
+
+/* Estilo para el componente prizes */
+.prizes {
+  width: 70%; /* Debe ocupar el 80%, igual que el componente game */
+  background-color: rgba(0, 0, 0, 0.1); /* Fondo suave */
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Estilo para los encabezados */
+h1 {
+  margin: 0;
+  color: #ecdcb0;
+  font-size: 5em;
+  text-transform: uppercase;
+  text-align: center;
+}

@@ -1,0 +1,38 @@
+<div class="prizes-container">
+  <h2 class="h2" *ngIf="!isConfigured">Premios: </h2>
+  <!-- Mostrar configuración solo si no se ha configurado -->
+  <div class="prize-configuration" *ngIf="!isConfigured">
+    <label for="lineaPrizes">Líneas:</label>
+    <input type="number" id="lineaPrizes" [(ngModel)]="lineaPrizes" min="1" />
+    <label for="cartonPrizes">Cartón:</label>
+    <input type="number" id="cartonPrizes" [(ngModel)]="cartonPrizes" min="1" />
+    <button (click)="configurePrizes()" class="set-button">Generar</button>
+  </div>
+
+  <!-- Mostrar lista de premios si ya se configuraron -->
+  <div *ngIf="isConfigured">
+    <ul class="prizes-list">
+      <li *ngFor="let prize of prizes; let i = index" class="prize-item">
+        <span>{{ prize.type | titlecase }} - Ganadorx:</span>
+        <span *ngIf="prize.winner" [class.assigned]="prize.winner">{{ prize.winner }}</span>
+        <button *ngIf="!prize.winner" (click)="markWinner(i)" class="assign-button">
+          Asignar ganadorx
+        </button>
+        <!-- Mensaje de éxito al asignar un ganador -->
+        <span *ngIf="prize.successMessage" class="success-message">{{ prize.successMessage }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Modal para asignar ganador -->
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <h3>Ingresa el nombre de lx ganadorx</h3>
+    <input type="text" [(ngModel)]="winnerName" placeholder="Nombre del ganadorx" />
+    <div class="modal-buttons">
+      <button (click)="assignWinner(selectedPrizeIndex!)" class="confirm-button">Confirmar</button>
+      <button (click)="closeModal()" class="cancel-button">Cancelar</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,229 @@
+.prizes-container {
+  margin: 15px auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.prizes-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+}
+
+.prize-item {
+  flex: 1 1 30%;
+  margin: 5px;
+  padding: 10px;
+  background-color: rgb(45, 4, 78);
+  border: 1px solid rgb(45, 4, 78);
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgb(45, 4, 78);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  min-width: 200px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fdfdfdfb;
+}
+
+.prize-item .assigned {
+  font-weight: bold;
+  color: #28a745;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+.set-button{
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.assign-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  margin: 12px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.set-button:hover,
+.assign-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.set-button:active,
+.assign-button:active {
+  background-color: #1e7e34;
+  transform: translateY(2px);
+}
+
+.assign-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.prize-configuration {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.h2 {
+  font-size: 3em;
+  font-weight: bold;
+  color: rgb(45, 4, 78);
+}
+
+.prize-configuration label {
+  font-size: 2em;
+  font-weight: bold;
+  color: rgb(45, 4, 78);
+}
+
+.prize-configuration input {
+  width: 100px;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  font-size: 1.2em;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.prize-configuration input:focus {
+  outline: none;
+  border-color: #ffc107;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
+}
+
+/* Animación para el mensaje de éxito */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.success-message {
+  display: block; /* Asegura que esté en una línea separada */
+  animation: fadeIn 1s ease-in-out;
+  color: #28a745;
+  font-size: 1.2em; /* Reducido el tamaño */
+  font-weight: bold;
+  margin-top: 15px; /* Asegura que el mensaje quede debajo */
+  text-align: center; /* Centra el mensaje */
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1.1em;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+}
+
+.confirm-button,
+.cancel-button {
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+.confirm-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.confirm-button:hover {
+  background-color: #218838;
+}
+
+.cancel-button:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .prizes-list {
+    justify-content: center;
+  }
+
+  .prize-item {
+    flex: 1 1 45%;
+  }
+
+  .prize-configuration input {
+    width: 120px;
+  }
+
+  .success-message {
+    font-size: 1em; /* Ajuste en tamaño para pantallas más pequeñas */
+  }
+}

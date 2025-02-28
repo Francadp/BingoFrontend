@@ -1,0 +1,35 @@
+<div class="game-container">
+  <!-- Contenedor para el título y los botones -->
+  <div class="header">
+    <button
+      *ngIf="!isPlaying"
+      (click)="togglePlayPause()"
+      class="play-button"
+      title="Play"
+    >
+      <span class="material-icons">play_arrow</span>
+    </button>
+
+    <button
+      *ngIf="isPlaying"
+      (click)="togglePlayPause()"
+      class="pause-button"
+      title="Pause"
+    >
+      <span class="material-icons">pause</span>
+    </button>
+
+    <h1>Bingo Cumple Fran</h1>
+  </div>
+
+  <!-- Cuenta regresiva, solo aparece después de presionar Play por primera vez -->
+  <div *ngIf="isPlaying && isCountingDown" class="countdown">
+    <!-- Aquí se muestra la imagen de la cuenta regresiva -->
+    <img [src]="countdownImage" alt="Countdown">
+  </div>
+
+  <!-- Número generado, solo después de la cuenta regresiva o si ya se presionó play antes -->
+  <div *ngIf="!isCountingDown && currentNumber !== null" class="number-display">
+    <h1>{{ currentNumber }}</h1>
+  </div>
+</div>

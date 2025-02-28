@@ -1,0 +1,12 @@
+<div class="numbers-list">
+  <h2>Números que ya salieron:</h2>
+  <ul class="number-list">
+    <li *ngFor="let number of numbers" class="number-item">
+      {{ number | number: '2.0' }}
+    </li>
+  </ul>
+  <!-- Botón para reiniciar el juego -->
+  <button (click)="resetGame()" class="reset-button">
+    Reiniciar Juego
+  </button>
+</div>
